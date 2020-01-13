@@ -13,11 +13,11 @@ import RealmSwift
 struct ContentView : View {
     var body: some View {
 
-        Text("NAT")
-        
+//        Text("NAT")
+        SelectLocation()
+       
     }
-    
-  
+
     
 }
 

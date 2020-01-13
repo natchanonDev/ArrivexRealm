@@ -11,11 +11,12 @@ import MapKit
 import CoreLocation
 
 
+
 struct MapView: UIViewRepresentable {
     
 
     let landmarks = WatPhoAnnotation.requestMockData()
-    
+     
    
     func makeUIView(context: Context) -> MKMapView{
         
@@ -24,6 +25,8 @@ struct MapView: UIViewRepresentable {
         return mapView
     }
     func updateUIView(_ view: MKMapView, context: Context){
+           
+        
             let coordinate = CLLocationCoordinate2D(
                 latitude: 13.746529, longitude: 100.493331)
 
@@ -37,7 +40,6 @@ struct MapView: UIViewRepresentable {
             view.setRegion(region, animated: true)
             view.isZoomEnabled = true
             view.isRotateEnabled = true
-      
             
 
     }

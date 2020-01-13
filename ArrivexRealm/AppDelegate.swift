@@ -18,15 +18,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-
-        print(Realm.Configuration.defaultConfiguration.fileURL) //open + path to open realm
-
-
-        do{
-            let realm = try! Realm()
-        } catch{
-            print("Err realm")
-        }
+        
+//         let realm = try! Realm()
+//         print(Realm.Configuration.defaultConfiguration.fileURL) //open + path to open realm
+//        
+//
+//        do{
+//            let realm = try! Realm()
+//        } catch{
+//            print("Err realm")
+//        }
 
         // Create the SwiftUI view that provides the window contents.
         let contentView = ContentView()

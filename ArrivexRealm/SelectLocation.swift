@@ -11,6 +11,8 @@ import SwiftUI
 import MapKit
 
 struct SelectLocation: View {
+    
+
 
     var body: some View {
         ZStack{
@@ -31,8 +33,10 @@ struct SelectLocation: View {
                 
                 MapView().padding(15)
                 
+    
                 Button(action:{
-                    //ใส่fn UpdateUI
+//                    MapView.updateUIView()
+                            print("Direc")
                 }) {
                     Image("direc24")
 //                    .renderingMode(.original)
@@ -44,14 +48,17 @@ struct SelectLocation: View {
 
                 }.frame(maxWidth: .infinity,maxHeight: .infinity, alignment: .topTrailing).shadow(radius: 2.0)
             }
-            
-//            Button(action:{
-//                            //ใส่fn UpdateUI
-//            }) {
-//                Text("  Discover  ").padding(10).foregroundColor(.white).font(.title)
-//
-//            }.background(Color(.black)).cornerRadius(13)
-//
+          
+            Button(action:{
+                //
+                print("Dicovery")
+            }) {
+                HStack {
+                    Image(systemName: "magnifyingglass")
+                    Text("Discovery").fontWeight(.semibold)
+                }.padding(10).foregroundColor(.white)
+            }.background(Color(.black)).cornerRadius(30)
+
         }
 
           
