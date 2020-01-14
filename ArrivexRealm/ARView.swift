@@ -12,55 +12,73 @@ struct ARView: View {
     
     var body: some View {
         
-        ZStack{
-            //กล้อง + ปุ่มenable กล้อง
-        
-        VStack{
             
-            Button(action:{
+        
+        ZStack{
+            Text("F")
+       //ใส่กล้อง +ตัวเปิดปิดกล้อง
+            
+        ZStack{
+            
+         ZStack{
+                
+                RoundedRectangle(cornerRadius: 25).foregroundColor(Color.black).opacity(0.05)
 
+            VStack{
+                
+            Button(action:{
             }) {
                 VStack{
-//                Image(systemName: "doc.text.viewfinder").font(.largeTitle).padding(2)
-                    Image(systemName: "signature").padding().font(.largeTitle)
+                    Image(systemName: "qrcode.viewfinder").font(.largeTitle)
                     Text("ACHIEVE").font(.footnote)
                 }
-            }.padding(2)
+            }.padding(.all,8.0)
      
             
             Button(action:{
+                print("map")
             }) {
                 VStack{
-                Image(systemName: "map").padding().font(.largeTitle)
+                Image(systemName: "map").font(.largeTitle)
                     Text("MAP").font(.footnote)
                 }
-            }.padding(2)
+            }.padding(.all,8.0)
             
             Button(action:{
+            
             }) {
                 VStack{
-                Image(systemName: "camera.viewfinder").padding().font(.largeTitle)
-//                    Image(systemName: "faceid").font(.largeTitle).padding(2)
+                Image(systemName: "camera.viewfinder").font(.largeTitle)
+
                     Text("SCREEN").font(.footnote)
                     Text("SHOT").font(.footnote)
                 }
-            }.padding(2)
-            
+            }.padding(.all,8.0)
+                
             Button(action:{
             }) {
                 VStack{
-                    Image(systemName: "book").padding().font(.largeTitle)
+                    Image(systemName: "book").font(.largeTitle)
                     Text("STAMPS").font(.footnote)
                     
                 }
-            }.padding(2)
+            }.padding(.all,8.0)
             
-        }.foregroundColor(.black).frame(maxWidth: .infinity,maxHeight: .infinity, alignment: .bottomTrailing).padding(.vertical,20)
+            }.foregroundColor(.black)
+                
+         }.frame(maxWidth: 80, maxHeight: 350)
+
+            
+        }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing).padding(.all,15)
+
+        }
+        
+      
         
     }
         
-    }
 }
+
 
 
 struct ARView_Previews: PreviewProvider {
