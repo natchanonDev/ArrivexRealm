@@ -20,10 +20,10 @@ struct SelectLocation: View {
             
        
         VStack{
-            Text("DISCOVER").padding(.top,40)
+            Text("DISCOVER").padding(.top,50)
 
              Text("ดึงName place").font(.title).fontWeight(.bold).padding(.top,5) //ดึงชื่อตามlacation annotaion
-                       Image("stamp").resizable().frame(width: 160,height: 220)
+                       Image("stamp").resizable().frame(width: 140,height: 200)
                            .overlay(
                                Rectangle()
                                    .fill(LinearGradient(gradient: Gradient(colors: [.clear]),
@@ -31,7 +31,7 @@ struct SelectLocation: View {
                                    .cornerRadius(12.0).shadow(radius: 1.0,x: 2, y: 2)
             ZStack{
                 
-                MapView().padding(15)
+                MapView().padding(10)
                 
     
                 Button(action:{
@@ -63,7 +63,7 @@ struct SelectLocation: View {
 
           
             
-    }
+        }.navigationBarBackButtonHidden(true).navigationBarHidden(true).edgesIgnoringSafeArea(.top)
     }
     
 }
