@@ -14,7 +14,12 @@ struct ContentView : View {
     var body: some View {
 
 //        Text("NAT")
-        SelectLocation()
+//        SelectLocation()
+        
+        ZStack {
+            Color(.cream).edgesIgnoringSafeArea(.all)
+            ARViewMenu()
+        }.frame(maxWidth: .infinity, maxHeight: .infinity).background(Color(.cream))
        
     }
 

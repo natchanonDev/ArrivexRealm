@@ -11,17 +11,16 @@ import SwiftUI
 struct ARViewMenu: View {
    
     @State var showmenu = true
-    @State private var isActive : Bool = false
+    @State private var isAchieve = false
+    @State private var isMap = false
+    @State private var isStamps = false
     
-    init(){
-          UINavigationBar.setAnimationsEnabled(false)
-      }
     
     var body:  some View {
     
-     NavigationView {
-            ZStack{
-            
+     
+        ZStack{
+                
              VStack{
                 HStack{
     //            Toggle() {
@@ -34,8 +33,8 @@ struct ARViewMenu: View {
                         Image(systemName: "text.justify")
                             .font(.title).foregroundColor(.blue).padding(.trailing,25)
                  }
-                }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing).padding(.top,45)
-            
+                }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing).padding(.top,50)
+                
            
                 
               ZStack() { //set frame of menus bar
@@ -45,27 +44,21 @@ struct ARViewMenu: View {
 
                 VStack{
                  
-                    NavigationLink( destination: SelectLocation(), isActive: self.$isActive){
-                        Text("")
-                    }
-                         
                     
                 Button(action:{
-                    self.isActive = true
+                    self.isAchieve = true
+                    print("ac")
                 }) {
                     VStack{
                         Image(systemName: "faceid").font(.largeTitle).shadow(radius: 1.0,x: 2, y: 2)
                         Text("ACHIEVE").font(.footnote).fontWeight(.ultraLight)
                     }.padding(.all,8.0)
                 }.padding(.top,8.0)
-
-                
+               
                 Button(action:{
-    //                SelectLocation()
+                    self.isMap = true
                     print("map")
-                    
-                          
-                     
+    
                 }) {
                     VStack{
                     Image(systemName: "map").font(.largeTitle).shadow(radius: 1.0,x: 2, y: 2)
@@ -85,6 +78,7 @@ struct ARViewMenu: View {
                 }.padding(.all,8.0)
                     
                 Button(action:{
+                    self.isStamps = true
                     print("stamp")
                 }) {
                     VStack{
@@ -98,12 +92,25 @@ struct ARViewMenu: View {
                 }.frame(maxWidth: 73, maxHeight: 360).offset(x : showmenu ? 0: UIScreen.main.bounds.height)
                 }.frame(maxWidth: .infinity, maxHeight: .infinity,alignment: .bottomTrailing).padding(15).padding(.bottom,50)
             
-            } //Vstack
-
+            }.edgesIgnoringSafeArea(.all) //Vstack
                 
-            }.frame(maxWidth: .infinity, maxHeight: .infinity).background(Color(.cream)).edgesIgnoringSafeArea(.all)
-     }// navigation
+                if isMap == true{
+                    SelectLocation()
+                }
+                
+                else if isAchieve == true{
+                    DiscoveryPlaces()
+                }
+                    
+                else if isStamps == true{
+                    Stamps()
+                }
+            
 
+//
+//            }.frame(maxWidth: .infinity, maxHeight: .infinity).background(Color(.cream)).edgesIgnoringSafeArea(.all)
+     
+            }.frame(maxWidth: .infinity, maxHeight: .infinity).background(Color(.cream))
         
 
       
