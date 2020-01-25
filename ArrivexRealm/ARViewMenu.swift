@@ -10,9 +10,12 @@ import SwiftUI
 
 struct ARViewMenu: View {
    
-    @State var showmenu : Bool = true
+    @State var showmenu = true
     @State private var isActive : Bool = false
     
+    init(){
+          UINavigationBar.setAnimationsEnabled(false)
+      }
     
     var body:  some View {
     
@@ -99,7 +102,7 @@ struct ARViewMenu: View {
 
                 
             }.frame(maxWidth: .infinity, maxHeight: .infinity).background(Color(.cream)).edgesIgnoringSafeArea(.all)
-        } // navigation
+     }// navigation
 
         
 
