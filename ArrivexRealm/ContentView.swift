@@ -26,7 +26,8 @@ struct ContentView : View {
             }
             
             
-            ARViewMenu()
+//            ARViewMenu()
+            SelectLocation()
         }.frame(maxWidth: .infinity, maxHeight: .infinity)
        
     }
