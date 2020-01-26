@@ -10,38 +10,53 @@ import SwiftUI
 
 struct HelpDiscovery: View {
     @State private var closed = false
+    @State private var isBack = false
+//    @State private var width: CGFloat?
     
     var body: some View {
         
-        
-            
         ZStack{
-            Color(.white).opacity(0.5).edgesIgnoringSafeArea(.all)
+        NavigationView {
+            VStack{
             ZStack{
-                ZStack{
-//                    Image(systemName: "clear.fill").foregroundColor(.white).padding(.top,20)
-                    
-                    Button(action:{
-                        self.closed = true
-                        
-                    }) {
-                           Image(systemName: "clear.fill").font(.largeTitle).foregroundColor(.white).padding(.top,20)
-                    }
-                    
-                    
-                }.frame(maxWidth: .infinity, maxHeight: .infinity,alignment: .topTrailing).padding(.horizontal,20)
-            }.frame(maxWidth: .infinity, maxHeight: .infinity).background(Color(.darkred)).cornerRadius(30.0).padding(.all,20).opacity(0.95)
+                
+            Text("").navigationBarTitle(Text("Tutorial")).navigationBarItems(trailing:
+                Button("Back") {
+                    self.isBack = true
+                }
+            )
+            }//Z
             
-             
-            Text("help").foregroundColor(.white)
+            ZStack{
+                ScrollView(.vertical) {
+                VStack(alignment: .leading){
+                    Text("STEP1").bold()
+                    Text("Choose the stamp according to the location you want to discover")
+                    
+                    Text("STEP2").bold()
+                    Text("See the hidden element in that place")
+                    
+                    Text("STEP3").bold()
+                    Text("Start playing and discover the specified symbol by panning tha camera")
+                    Text("By interacting with the symbol the hidden story can be revealed")
+                    
+                    Text("STEP4").bold()
+                    Text("The revealed will be remembered and accumulated. When finding all the symbols, you will recieve a reward by the stamp you have chosen, which is an achievement found in the location")
+                }.padding(.vertical,20)
+                }//scoll
+                    
+              }//z
+                 }//v
+                
+                
             
-            if closed == true {
+
+            
+        } //Navi
+            if isBack == true{
                 SelectLocation()
             }
-            
-            
-        }.frame(maxWidth: .infinity, maxHeight: .infinity)
-            
+        }
         
     
     }

@@ -15,7 +15,12 @@ struct SelectLocation: View {
     @State private var isDiscovery = false
     @State private var isActiveARView = false
     @State private var isHelp = false
+    
     @EnvironmentObject var data: Datamodel
+    
+    @State private var isAchieve = false
+    @State private var isMap = false
+    @State private var isStamps = false
     
     var body: some View {
         
@@ -30,7 +35,7 @@ struct SelectLocation: View {
                 VStack{
 
                 ZStack{
-                     MapView().padding(10).navigationBarTitle(Text("Discovery")).navigationBarItems(trailing:
+                     MapView().padding(10).navigationBarTitle(Text("Discovery Map")).navigationBarItems(trailing:
                          HStack {
                               Button(action : { withAnimation{ self.showmenubar.toggle()  }
                                 
@@ -44,8 +49,13 @@ struct SelectLocation: View {
                     )
 
                     ZStack{
+                        
+                        
+                        
 
                         ScrollView(.horizontal) {
+                        
+
                         HStack{
                             VStack{
                             Image("Stamp").resizable().frame(width: 110,height: 160)
@@ -53,26 +63,54 @@ struct SelectLocation: View {
                                                           Rectangle()
                                                        .fill(LinearGradient(gradient: Gradient(colors: [.clear]),
                                                              startPoint: .center, endPoint: .bottom)))
-                                                       .cornerRadius(12.0).shadow(radius: 1.5,x: 2, y: 2)
-                                Text("Mea Sue Pavilion").font(.footnote).fontWeight(.regular).padding(3).background(Color(.white)).cornerRadius(12.0)
+                                .cornerRadius(12.0).shadow(radius: 0.5,x: 2, y: 2)
+                                Text("Mea Sue Pavilion").font(.footnote).fontWeight(.regular).padding(3).background(Color(.darkred)).cornerRadius(10.0)
+                            }
+                            
+                            VStack{
+                            Image("Stamp1").resizable().frame(width: 110,height: 160)
+                                                       .overlay(
+                                                          Rectangle()
+                                                       .fill(LinearGradient(gradient: Gradient(colors: [.clear]),
+                                                             startPoint: .center, endPoint: .bottom)))
+                                                       .cornerRadius(12.0).shadow(radius: 0.5,x: 2, y: 2)
+                                Text("Nuad Pavilion").font(.footnote).fontWeight(.regular).padding(3).background(Color(.darkred)).cornerRadius(10.0)
+                            }
+                            
+                            VStack{
+                            Image("Stamp2").resizable().frame(width: 110,height: 160)
+                                                       .overlay(
+                                                          Rectangle()
+                                                       .fill(LinearGradient(gradient: Gradient(colors: [.clear]),
+                                                             startPoint: .center, endPoint: .bottom)))
+                                                       .cornerRadius(12.0).shadow(radius: 0.5,x: 2, y: 2)
+                                Text("Misakawan Park").font(.footnote).fontWeight(.regular).padding(3).background(Color(.darkred)).cornerRadius(10.0)
+                            }
+
+                            VStack{
+                            Image("Stamp3").resizable().frame(width: 110,height: 160)
+                                                       .overlay(
+                                                          Rectangle()
+                                                       .fill(LinearGradient(gradient: Gradient(colors: [.clear]),
+                                                             startPoint: .center, endPoint: .bottom)))
+                                                       .cornerRadius(12.0).shadow(radius: 0.5,x: 2, y: 2)
+                                Text("The Main Chapel").font(.footnote).fontWeight(.regular).padding(3).background(Color(.darkred)).cornerRadius(10.0)
                             }
 
 
-                        }.foregroundColor(Color(.black)) //H
 
 
 
-                        }.padding(.horizontal,20).padding(.bottom,8) //scrollview
+
+
+                        }.foregroundColor(Color(.white)) //H
+
+                            
+
+                        }.padding(.horizontal,18).padding(.bottom,8) //scrollview
 
                     }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomLeading).padding(.bottom,10)
-
-//                    ZStack{
-//                        HStack{
-//                        Text("menu")
-//                        }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-//                    }.frame(maxWidth: .infinity, maxHeight: .infinity)
-//                     .offset(x: showmenubar ? 0: 70)
-
+                    
 
                 }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment:.center)//Z
 
@@ -85,20 +123,58 @@ struct SelectLocation: View {
                                           Text("Discovery").fontWeight(.semibold)
                                           }.padding(10).foregroundColor(.white)
                                       }.background(Color(.black)).cornerRadius(30)
-                }.offset(x: showmenubar ? 0: -70)  //V
+                }.offset(x: showmenubar ? 0: -72)  //V
 
 
 
                 }//navi
                 
                 if showmenubar == false{
-                        Color(.white).edgesIgnoringSafeArea(.all).opacity(0.7).padding(.trailing,70)
+                        Color(.black).edgesIgnoringSafeArea(.all).opacity(0.1).padding(.trailing,82)
                          ZStack{
                              VStack{
-                                 Text("nae").padding(10).padding(.bottom,10)
-                                Text("nae2").padding(10).padding(.bottom,10)
+//                                Button(action:{
+//                                                 self.isAchieve = true
+//                                             }) {
+//                                                 VStack{
+//                                                     Image(systemName: "faceid").font(.largeTitle)
+//                                                     Text("ACHIEVE").font(.footnote).fontWeight(.ultraLight)
+//                                                 }.padding(.all,5.0)
+//                                             }.padding(.top,8.0)
+                                            
+                                Button(action:{
+                                                 print("map")
+                                             }) {
+                                                 VStack{
+                                                 Image(systemName: "map").font(.largeTitle)
+                                                    Text("MAP").font(.footnote).fontWeight(.ultraLight)
+                                                 }.opacity(0.3)
+                                             }.padding(.all,5.0)
+                                             
+          
+                                Button(action:{
+                                                 self.isStamps = true
+                                                 
+                                             }) {
+                                                 VStack{
+                                                     Image(systemName: "book").font(.largeTitle)
+                                                     Text("STAMPS").font(.footnote).fontWeight(.ultraLight)
+                                                 }.padding(.all,5.0)
+                                             }.padding(.bottom,8.0)
+                                
+                                Button(action:{
+                                                 self.isHelp = true
+                                                 print("help")
+                                             }) {
+                                                 VStack{
+                                                     Image(systemName: "ellipses.bubble").font(.largeTitle)
+                                                     Text("MANUAL").font(.footnote).fontWeight(.ultraLight)
+                                                 }.padding(.all,5.0)
+                                             }.padding(.bottom,8.0)
+                                             
                              }.padding(.top,50)
                          
+                            
                              
                             }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment:.topTrailing).padding(10)
                              
@@ -125,6 +201,16 @@ struct SelectLocation: View {
             
             else if isHelp == true{
                 HelpDiscovery()
+            }
+
+
+            
+            else if isAchieve == true{
+                DiscoveryPlaces()
+            }
+                
+            else if isStamps == true{
+                Stamps()
             }
                          
         } //z
