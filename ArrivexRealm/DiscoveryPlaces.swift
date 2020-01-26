@@ -9,32 +9,47 @@
 import SwiftUI
 
 struct DiscoveryPlaces: View {
-    
+    @EnvironmentObject var data : Datamodel
     @State private var isActiveARView = false
     
     var body: some View {
+        
         ZStack{
-            
-        VStack{
-            Text("DiscoveryPlaces")
-            
-                     
-                       Button(action:{
-                           self.isActiveARView = true
-                          print("dis_dispage")
-                       }) {
-                           HStack {
-                               Image(systemName: "magnifyingglass")
+            Color(.cream).edgesIgnoringSafeArea(.all)
+         ZStack {
+          if isActiveARView == false{
+           
+                VStack{
+                Text("DiscoveryPlaces")
+
+                Button(action:{
+                               self.isActiveARView = true
+                              print("dis_dispage")
+                           }) {
+                        HStack {
+                                Image(systemName: "magnifyingglass")
                                Text("Discovery").fontWeight(.semibold)
-                           }.padding(10).foregroundColor(.white)
-                       }.background(Color(.black)).cornerRadius(30)
+                               }.padding(10).foregroundColor(.white)
+                           }.background(Color(.black)).cornerRadius(30)
+                }.background(Color(.cream))
             }//Vstack
-            
-            if isActiveARView == true {
-                ARViewMenu()
             }
             
-        }.frame(maxWidth: .infinity, maxHeight: .infinity).background(Color(.cream))
+            
+            if isActiveARView == true {
+                ZStack {
+                    if data.enableAR {ARDisplayView()}
+                    
+                    else {
+                        Color(.cream).edgesIgnoringSafeArea(.all)
+                    }
+                    
+                    
+                    ARViewMenu()
+                }.frame(maxWidth: .infinity, maxHeight: .infinity)
+            }
+            
+        }.frame(maxWidth: .infinity, maxHeight: .infinity)
             
 
             

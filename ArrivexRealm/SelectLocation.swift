@@ -50,12 +50,13 @@ struct SelectLocation: View {
 
             }.padding(.bottom,20)
               
-                if isDiscovery == true {
-                    DiscoveryPlaces()
-                }
-              
+               
                 
             }.frame(maxWidth: .infinity, maxHeight: .infinity).background(Color(.cream))
+            if isDiscovery == true {
+                               DiscoveryPlaces()
+                           }
+                         
         } //z
      
     }

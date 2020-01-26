@@ -12,6 +12,7 @@ import RealmSwift
 
 struct ContentView : View {
     @EnvironmentObject var data : Datamodel
+   
     var body: some View {
 
 //        Text("NAT")
@@ -19,7 +20,10 @@ struct ContentView : View {
         
         ZStack {
             if data.enableAR {ARDisplayView()}
-            Color(.cream).edgesIgnoringSafeArea(.all)
+            
+            else {
+                Color(.cream).edgesIgnoringSafeArea(.all)
+            }
             
             
             ARViewMenu()
