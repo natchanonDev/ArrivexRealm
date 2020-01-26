@@ -38,7 +38,7 @@ struct ARViewMenu: View {
                         Image(systemName: "text.justify")
                             .font(.title).foregroundColor(.blue).padding(.trailing,25)
                  }
-                }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing).padding(.top,50)
+                }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing).padding(.top,50) //H
                 
            
                 
