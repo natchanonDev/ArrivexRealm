@@ -56,7 +56,7 @@ struct ARViewMenu: View {
                 }) {
                     VStack{
                         Image(systemName: "faceid").font(.largeTitle).shadow(radius: 1.0,x: 2, y: 2)
-                        Text("ACHIEVE").font(.footnote).fontWeight(.ultraLight)
+                        Text("ACHIEVE").font(.footnote).fontWeight(.regular)
                     }.padding(.all,8.0)
                 }.padding(.top,8.0)
                
@@ -67,7 +67,7 @@ struct ARViewMenu: View {
                 }) {
                     VStack{
                     Image(systemName: "map").font(.largeTitle).shadow(radius: 1.0,x: 2, y: 2)
-                        Text("MAP").font(.footnote).fontWeight(.ultraLight)
+                        Text("MAP").font(.footnote).fontWeight(.regular)
                     }
                 }.padding(.all,8.0)
                 
@@ -77,8 +77,8 @@ struct ARViewMenu: View {
                     VStack{
                     Image(systemName: "camera.viewfinder").font(.largeTitle).shadow(radius: 1.0,x: 2, y: 2)
 
-                        Text("SCREEN").font(.footnote).fontWeight(.ultraLight)
-                        Text("SHOT").font(.footnote).fontWeight(.ultraLight)
+                        Text("SCREEN").font(.footnote).fontWeight(.regular)
+                        Text("SHOT").font(.footnote).fontWeight(.regular)
                     }
                 }.padding(.all,8.0)
                     
@@ -87,8 +87,8 @@ struct ARViewMenu: View {
                     print("stamp")
                 }) {
                     VStack{
-                        Image(systemName: "book").font(.largeTitle).shadow(radius: 1.0,x: 2, y: 2)
-                        Text("STAMPS").font(.footnote).fontWeight(.ultraLight)
+                        Image(systemName: "book").font(.footnote).shadow(radius: 1.0,x: 2, y: 2)
+                        Text("STAMPS").font(.footnote).fontWeight(.regular)
                     }.padding(.all,8.0)
                 }.padding(.bottom,8.0)
                 

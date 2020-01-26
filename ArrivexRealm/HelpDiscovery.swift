@@ -16,10 +16,14 @@ struct HelpDiscovery: View {
     var body: some View {
         
         ZStack{
-        NavigationView {
-            VStack{
+//        NavigationView {
+            
             ZStack{
                 
+            NavigationView {
+                ZStack{
+                    
+             ZStack{
             Text("").navigationBarTitle(Text("Tutorial")).navigationBarItems(trailing:
                 Button("Back") {
                     self.isBack = true
@@ -28,31 +32,39 @@ struct HelpDiscovery: View {
             }//Z
             
             ZStack{
+//                ZStack{
+//                Image("path").resizable().frame(width: 200,height: 260).opacity(0.1)
+//                }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
                 ScrollView(.vertical) {
                 VStack(alignment: .leading){
-                    Text("STEP1").bold()
+                    
+                    Text("STEP1").bold().foregroundColor(Color(.white)).padding(.horizontal,10).background(Color(.black)).cornerRadius(30)
                     Text("Choose the stamp according to the location you want to discover")
                     
-                    Text("STEP2").bold()
+                    Text("STEP2").bold().foregroundColor(Color(.white)).padding(.horizontal,10).background(Color(.black)).cornerRadius(30)
                     Text("See the hidden element in that place")
                     
-                    Text("STEP3").bold()
+                    Text("STEP3").bold().foregroundColor(Color(.white)).padding(.horizontal,10).background(Color(.black)).cornerRadius(30)
                     Text("Start playing and discover the specified symbol by panning tha camera")
                     Text("By interacting with the symbol the hidden story can be revealed")
                     
-                    Text("STEP4").bold()
+                    Text("STEP4").bold().foregroundColor(Color(.white)).padding(.horizontal,10).background(Color(.black)).cornerRadius(30)
                     Text("The revealed will be remembered and accumulated. When finding all the symbols, you will recieve a reward by the stamp you have chosen, which is an achievement found in the location")
-                }.padding(.vertical,20)
+                }.padding(20)
                 }//scoll
                     
               }//z
-                 }//v
+                
+            }.frame(maxWidth: .infinity, maxHeight: .infinity)//Z
+        
+                }//navi
+                 
                 
                 
             
 
             
-        } //Navi
+        } //z
             if isBack == true{
                 SelectLocation()
             }

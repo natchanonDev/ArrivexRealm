@@ -49,16 +49,13 @@ struct SelectLocation: View {
                     )
 
                     ZStack{
-                        
-                        
-                        
 
                         ScrollView(.horizontal) {
                         
 
                         HStack{
                             VStack{
-                            Image("Stamp").resizable().frame(width: 110,height: 160)
+                                Image("Stamp").resizable().frame(width: 110,height: 160)
                                                        .overlay(
                                                           Rectangle()
                                                        .fill(LinearGradient(gradient: Gradient(colors: [.clear]),
@@ -75,7 +72,7 @@ struct SelectLocation: View {
                                                              startPoint: .center, endPoint: .bottom)))
                                                        .cornerRadius(12.0).shadow(radius: 0.5,x: 2, y: 2)
                                 Text("Nuad Pavilion").font(.footnote).fontWeight(.regular).padding(3).background(Color(.darkred)).cornerRadius(10.0)
-                            }
+                            }.opacity(0.5)
                             
                             VStack{
                             Image("Stamp2").resizable().frame(width: 110,height: 160)
@@ -85,7 +82,7 @@ struct SelectLocation: View {
                                                              startPoint: .center, endPoint: .bottom)))
                                                        .cornerRadius(12.0).shadow(radius: 0.5,x: 2, y: 2)
                                 Text("Misakawan Park").font(.footnote).fontWeight(.regular).padding(3).background(Color(.darkred)).cornerRadius(10.0)
-                            }
+                            }.opacity(0.5)
 
                             VStack{
                             Image("Stamp3").resizable().frame(width: 110,height: 160)
@@ -95,7 +92,7 @@ struct SelectLocation: View {
                                                              startPoint: .center, endPoint: .bottom)))
                                                        .cornerRadius(12.0).shadow(radius: 0.5,x: 2, y: 2)
                                 Text("The Main Chapel").font(.footnote).fontWeight(.regular).padding(3).background(Color(.darkred)).cornerRadius(10.0)
-                            }
+                            }.opacity(0.5)
 
 
 
@@ -114,6 +111,7 @@ struct SelectLocation: View {
 
                 }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment:.center)//Z
 
+
                     Button(action:{
                                       self.isDiscovery = true
                                           print("Dicovery")
@@ -123,6 +121,9 @@ struct SelectLocation: View {
                                           Text("Discovery").fontWeight(.semibold)
                                           }.padding(10).foregroundColor(.white)
                                       }.background(Color(.black)).cornerRadius(30)
+
+                    
+                    
                 }.offset(x: showmenubar ? 0: -72)  //V
 
 
