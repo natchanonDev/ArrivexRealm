@@ -160,6 +160,7 @@ struct SelectLocation: View {
                                                  VStack{
                                                      Image(systemName: "book").font(.largeTitle)
                                                      Text("STAMPS").font(.footnote).fontWeight(.ultraLight)
+//                                                     Text("COLLECTION").font(.footnote).fontWeight(.ultraLight)
                                                  }.padding(.all,5.0)
                                              }.padding(.bottom,8.0)
                                 
@@ -169,7 +170,8 @@ struct SelectLocation: View {
                                              }) {
                                                  VStack{
                                                      Image(systemName: "ellipses.bubble").font(.largeTitle)
-                                                     Text("MANUAL").font(.footnote).fontWeight(.ultraLight)
+                                                     Text("USER").font(.footnote).fontWeight(.ultraLight)
+                                                     Text("GUIDE").font(.footnote).fontWeight(.ultraLight)
                                                  }.padding(.all,5.0)
                                              }.padding(.bottom,8.0)
                                              

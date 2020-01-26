@@ -87,8 +87,9 @@ struct ARViewMenu: View {
                     print("stamp")
                 }) {
                     VStack{
-                        Image(systemName: "book").font(.footnote).shadow(radius: 1.0,x: 2, y: 2)
+                        Image(systemName: "book").font(.largeTitle).shadow(radius: 1.0,x: 2, y: 2)
                         Text("STAMPS").font(.footnote).fontWeight(.regular)
+//                        Text("COLLECTION").font(.footnote).fontWeight(.regular)
                     }.padding(.all,8.0)
                 }.padding(.bottom,8.0)
                 
