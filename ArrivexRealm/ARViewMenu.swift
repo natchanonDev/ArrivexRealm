@@ -15,6 +15,7 @@ struct ARViewMenu: View {
     @State private var isMap = false
     @State private var isStamps = false
     
+    @EnvironmentObject var data: Datamodel
     
     var body:  some View {
     
@@ -23,10 +24,14 @@ struct ARViewMenu: View {
                 
              VStack{
                 HStack{
-    //            Toggle() {
-    ////                      toggle AR
-    //                   }.padding()
-                 Text("nat")
+    
+                  Toggle(isOn: $data.enableAR){
+                            Text("AR").bold()
+                        }.frame(width: CGFloat(80))
+                        .padding(.all,6)
+                        .cornerRadius(15)
+
+                 
                     Button(action : { withAnimation{ self.showmenu.toggle()  }
         
                     } ) {
@@ -110,7 +115,7 @@ struct ARViewMenu: View {
 //
 //            }.frame(maxWidth: .infinity, maxHeight: .infinity).background(Color(.cream)).edgesIgnoringSafeArea(.all)
      
-            }.frame(maxWidth: .infinity, maxHeight: .infinity).background(Color(.cream))
+            }.frame(maxWidth: .infinity, maxHeight: .infinity)
         
 
       
