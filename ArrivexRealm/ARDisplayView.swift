@@ -25,7 +25,6 @@ struct ARViewContainer: UIViewRepresentable {
     
     func makeUIView(context: Context) -> ARView {
         
-        
         return Datamodel.shared.arView
         
     }

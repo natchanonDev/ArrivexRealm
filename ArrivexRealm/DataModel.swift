@@ -72,15 +72,7 @@ final class Datamodel: ObservableObject {
                     print(" Cow fail load:\(error.localizedDescription)")
                 }
             }
-//            Experience.loadElephantSceneAsync { result in
-//                switch result {
-//                case .success(let anchor):
-//                    self.loadScene += 1
-//                    self.arView.scene.anchors.append(anchor)
-//                case .failure(let error):
-//                    print("elephant fail load:\(error.localizedDescription)")
-//                }
-//            }
+
         }
     }
     

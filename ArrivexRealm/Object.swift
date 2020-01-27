@@ -15,15 +15,16 @@ class StampObject: Object {
     @objc dynamic var isChoosed : Bool = false
     @objc dynamic var info : String = ""
     
-    let scenes = List<Scenes>()
+    let scenes = List<Scene>()
     
-//    @objc dynamic
   
 }
 
-class Scenes: Object {
+class Scene: Object {
     
+     @objc dynamic var SceneName : String = ""
      @objc dynamic var isDoneScene : Bool = false
     
 }
 
+    

@@ -11,12 +11,10 @@ import SwiftUI
 struct HelpDiscovery: View {
     @State private var closed = false
     @State private var isBack = false
-//    @State private var width: CGFloat?
     
     var body: some View {
-        
+    
         ZStack{
-//        NavigationView {
             
             ZStack{
                 
@@ -24,17 +22,18 @@ struct HelpDiscovery: View {
                 ZStack{
                     
              ZStack{
+              
             Text("").navigationBarTitle(Text("Tutorial")).navigationBarItems(trailing:
                 Button("Back") {
                     self.isBack = true
                 }
+                
             )
+               
             }//Z
             
             ZStack{
-//                ZStack{
-//                Image("path").resizable().frame(width: 200,height: 260).opacity(0.1)
-//                }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
+
                 ScrollView(.vertical) {
                 VStack(alignment: .leading){
                     

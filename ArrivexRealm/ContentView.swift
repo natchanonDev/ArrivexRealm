@@ -14,20 +14,15 @@ struct ContentView : View {
     @EnvironmentObject var data : Datamodel
    
     var body: some View {
-
-//        Text("NAT")
-//        SelectLocation()
         
         ZStack {
+            
             if data.enableAR {ARDisplayView()}
             
             else {
                 Color(.cream).edgesIgnoringSafeArea(.all)
             }
             
-            
-//            ARViewMenu()
-//            SelectLocation()
             WelcomePage()
         }.frame(maxWidth: .infinity, maxHeight: .infinity)
        

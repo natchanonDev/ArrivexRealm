@@ -9,8 +9,10 @@
 import SwiftUI
 import MapKit
 
+
 struct MapView: UIViewRepresentable {
     
+  
     @State var manager = CLLocationManager()
     @State var alert = false
 

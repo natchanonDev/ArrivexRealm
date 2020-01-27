@@ -18,7 +18,6 @@ struct ARViewMenu: View {
     @EnvironmentObject var data: Datamodel
     
     var body:  some View {
-    
      
         ZStack{
                 
@@ -45,7 +44,7 @@ struct ARViewMenu: View {
               ZStack() { //set frame of menus bar
                 ZStack() {
                     
-                RoundedRectangle(cornerRadius: 25).foregroundColor(Color.white).opacity(0.3)
+                RoundedRectangle(cornerRadius: 20).foregroundColor(Color.white).opacity(0.3)
 
                 VStack{
                  
@@ -89,13 +88,15 @@ struct ARViewMenu: View {
                     VStack{
                         Image(systemName: "book").font(.largeTitle).shadow(radius: 1.0,x: 2, y: 2)
                         Text("STAMPS").font(.footnote).fontWeight(.regular)
-//                        Text("COLLECTION").font(.footnote).fontWeight(.regular)
+                        Text("COLLECTION").font(.system(size: 8
+                        )).fontWeight(.regular)
+
                     }.padding(.all,8.0)
                 }.padding(.bottom,8.0)
                 
-                }.foregroundColor(Color(.blue))
+                }.foregroundColor(Color(.blue)).padding(.vertical, 5)
             
-                }.frame(maxWidth: 73, maxHeight: 360).offset(x : showmenu ? 0: UIScreen.main.bounds.height)
+                }.frame(maxWidth: 73, maxHeight: 365).offset(x : showmenu ? 0: UIScreen.main.bounds.height)
                 }.frame(maxWidth: .infinity, maxHeight: .infinity,alignment: .bottomTrailing).padding(15).padding(.bottom,50)
             
             }.edgesIgnoringSafeArea(.all) //Vstack
@@ -111,16 +112,11 @@ struct ARViewMenu: View {
                 else if isStamps == true{
                     Stamps()
                 }
-            
-
-//
-//            }.frame(maxWidth: .infinity, maxHeight: .infinity).background(Color(.cream)).edgesIgnoringSafeArea(.all)
+    
      
             }.frame(maxWidth: .infinity, maxHeight: .infinity)
         
-
-      
-        
+   
     }
         
 }

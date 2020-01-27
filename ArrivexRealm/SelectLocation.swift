@@ -16,6 +16,7 @@ struct SelectLocation: View {
     @State private var isActiveARView = false
     @State private var isHelp = false
     
+    
     @EnvironmentObject var data: Datamodel
     
     @State private var isAchieve = false
@@ -126,22 +127,12 @@ struct SelectLocation: View {
                     
                 }.offset(x: showmenubar ? 0: -72)  //V
 
-
-
                 }//navi
                 
                 if showmenubar == false{
                         Color(.black).edgesIgnoringSafeArea(.all).opacity(0.1).padding(.trailing,82)
                          ZStack{
                              VStack{
-//                                Button(action:{
-//                                                 self.isAchieve = true
-//                                             }) {
-//                                                 VStack{
-//                                                     Image(systemName: "faceid").font(.largeTitle)
-//                                                     Text("ACHIEVE").font(.footnote).fontWeight(.ultraLight)
-//                                                 }.padding(.all,5.0)
-//                                             }.padding(.top,8.0)
                                             
                                 Button(action:{
                                                  print("map")
@@ -149,9 +140,9 @@ struct SelectLocation: View {
                                                  VStack{
                                                  Image(systemName: "map").font(.largeTitle)
                                                     Text("MAP").font(.footnote).fontWeight(.ultraLight)
-                                                 }.opacity(0.3)
+                                                 }.opacity(0.3).padding(.top,3)
                                              }.padding(.all,5.0)
-                                             
+                                
           
                                 Button(action:{
                                                  self.isStamps = true
@@ -160,7 +151,8 @@ struct SelectLocation: View {
                                                  VStack{
                                                      Image(systemName: "book").font(.largeTitle)
                                                      Text("STAMPS").font(.footnote).fontWeight(.ultraLight)
-//                                                     Text("COLLECTION").font(.footnote).fontWeight(.ultraLight)
+                                                    Text("COLLECTION").font(.system(size: 8
+                                                    )).fontWeight(.ultraLight)
                                                  }.padding(.all,5.0)
                                              }.padding(.bottom,8.0)
                                 
@@ -170,16 +162,18 @@ struct SelectLocation: View {
                                              }) {
                                                  VStack{
                                                      Image(systemName: "ellipses.bubble").font(.largeTitle)
-                                                     Text("USER").font(.footnote).fontWeight(.ultraLight)
-                                                     Text("GUIDE").font(.footnote).fontWeight(.ultraLight)
+                                                     Text("TUTORIAL").font(.footnote).fontWeight(.ultraLight)
+//                                                     Text("GUIDE").font(.system(size: 10
+//                                                     )).fontWeight(.ultraLight)
                                                  }.padding(.all,5.0)
                                              }.padding(.bottom,8.0)
+                                
                                              
                              }.padding(.top,50)
                          
                             
                              
-                            }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment:.topTrailing).padding(10)
+                            }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment:.topTrailing).padding(5)
                              
                 }
                 
