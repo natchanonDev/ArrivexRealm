@@ -11,11 +11,11 @@ import SwiftUI
 import MapKit
 
 struct SelectLocation: View {
+    
     @State var showmenubar = true
     @State private var isDiscovery = false
     @State private var isActiveARView = false
     @State private var isHelp = false
-    
     
     @EnvironmentObject var data: Datamodel
     
@@ -56,7 +56,7 @@ struct SelectLocation: View {
 
                         HStack{
                             VStack{
-                                Image("Stamp").resizable().frame(width: 110,height: 160)
+                                Image("TestStamp").resizable().frame(width: 110,height: 160)
                                                        .overlay(
                                                           Rectangle()
                                                        .fill(LinearGradient(gradient: Gradient(colors: [.clear]),

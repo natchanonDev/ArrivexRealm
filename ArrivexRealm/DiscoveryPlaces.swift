@@ -16,23 +16,49 @@ struct DiscoveryPlaces: View {
         
         ZStack{
             Color(.cream).edgesIgnoringSafeArea(.all)
+    
          ZStack {
           if isActiveARView == false{
-           
-                VStack{
-                Text("DiscoveryPlaces")
-
+            
+             VStack{
+                VStack(alignment: .leading){
+                    
+                
+                    Text("Mea Sue Pavilion").bold().font(.largeTitle).padding(.top,20)  // name of place
+                    
+                    HStack(alignment: .top){
+                        Image("light").resizable().frame(width: 50, height: 60)
+                        VStack(alignment: .leading){
+                            Text("LIGHT ELEMENT").font(.body).bold()
+                            Text("To discovery spirit gradient of the people").font(.footnote).fontWeight(.ultraLight)
+                            
+                         }
+                    }
+                    HStack(alignment: .top){
+                        Image("sound").resizable().frame(width: 50, height: 60)
+                        VStack(alignment: .leading){
+                                Text("SOUND ELEMENT").font(.body).bold()
+                                Text("Thai traditional outdoor games in Sala Mea Sue").font(.footnote).fontWeight(.ultraLight)
+                                           
+                            }
+                    }
+                                   
+                    Spacer()
+                    
+                   
+                }.background(Color(.cream)) // v
                 Button(action:{
-                               self.isActiveARView = true
-                              print("dis_dispage")
-                           }) {
-                        HStack {
-                                Image(systemName: "magnifyingglass")
-                               Text("Discovery").fontWeight(.semibold)
-                               }.padding(10).foregroundColor(.white)
-                           }.background(Color(.black)).cornerRadius(30)
-                }.background(Color(.cream))
-            }//Vstack
+                               
+                                              self.isActiveARView = true
+                                             print("dis_dispage")
+                                          }) {
+                                       HStack {
+                                               Image(systemName: "magnifyingglass")
+                                              Text("Discovery").fontWeight(.semibold)
+                                              }.padding(10).foregroundColor(.white)
+                                       }.background(Color(.black)).cornerRadius(30).padding(.bottom,10) // button
+             }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+            }//if false
             }
             
             
