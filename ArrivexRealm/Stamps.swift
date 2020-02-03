@@ -10,23 +10,32 @@ import SwiftUI
 
 struct Stamps: View {
     @State private var isBack = false
+    var selectLocation = SelectLocation()
     
     var body: some View {
        
         ZStack{
-        NavigationView {
-            Text("").navigationBarTitle(Text("Stamps Collection")).navigationBarItems(trailing:
-                Button("Back") {
-                    self.isBack = true
-                }
-            )
+            
+        if isBack == false{
+            NavigationView {
+                Text("").navigationBarTitle(Text("Stamps Collection")).navigationBarItems(trailing:
+                    Button("Back") {
+                        self.isBack = true
+                    }
+                )
 
-            ZStack {
-            Text("Stamps pad")
-        }.frame(maxWidth: .infinity, maxHeight: .infinity).background(Color(.cream)).edgesIgnoringSafeArea(.all)
+                ZStack {
+                Text("Stamps pad")
+            }.frame(maxWidth: .infinity, maxHeight: .infinity).background(Color(.cream)).edgesIgnoringSafeArea(.all)
+            }
         }
             if isBack == true{
-                SelectLocation()
+                if selectLocation.isStampFromSelect == true
+                {
+
+                    DiscoveryPlaces()
+                }
+
             }
         }
     }

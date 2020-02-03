@@ -24,7 +24,7 @@ struct DiscoveryPlaces: View {
                 VStack(alignment: .leading){
                     
                 
-                    Text("Mea Sue Pavilion").bold().font(.largeTitle).padding(.top,20)  // name of place
+                    Text("Mae Sue Pavilion").bold().font(.largeTitle).padding(.top,20)  // name of place
                     
                     HStack(alignment: .top){
                         Image("light").resizable().frame(width: 50, height: 60)
@@ -38,7 +38,7 @@ struct DiscoveryPlaces: View {
                         Image("sound").resizable().frame(width: 50, height: 60)
                         VStack(alignment: .leading){
                                 Text("SOUND ELEMENT").font(.body).bold()
-                                Text("Thai traditional outdoor games in Sala Mea Sue").font(.footnote).fontWeight(.ultraLight)
+                                Text("Thai traditional outdoor games in Sala Mae Sue").font(.footnote).fontWeight(.ultraLight)
                                            
                             }
                     }

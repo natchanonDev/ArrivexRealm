@@ -105,7 +105,7 @@ class WatPhoAnnotation: NSObject, MKAnnotation {
                              subtitle:"The north chapel Phra Palilai",
                              coordinate: .init(latitude: 13.746971, longitude: 100.493135),
                              mapID : "3"),
-            WatPhoAnnotation(title: "Measue Pavilion",
+            WatPhoAnnotation(title: "Mae Sue Pavilion",
                              subtitle:"ศาลาแม่ซื้อ",
                              coordinate: .init(latitude: 13.746124, longitude: 100.492603),
                              mapID : "4"),

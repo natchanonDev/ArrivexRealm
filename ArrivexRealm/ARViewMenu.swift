@@ -106,7 +106,7 @@ struct ARViewMenu: View {
                 }
                 
                 else if isAchieve == true{
-                    DiscoveryPlaces()
+                    ElementDiscover()
                 }
                     
                 else if isStamps == true{

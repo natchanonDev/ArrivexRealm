@@ -22,6 +22,7 @@ struct SelectLocation: View {
     @State private var isAchieve = false
     @State private var isMap = false
     @State private var isStamps = false
+    @State public var isStampFromSelect = false
     
     var body: some View {
         
@@ -56,44 +57,44 @@ struct SelectLocation: View {
 
                         HStack{
                             VStack{
-                                Image("TestStamp").resizable().frame(width: 110,height: 160)
+                                Image("m1").resizable().frame(width: 110,height: 160)
                                                        .overlay(
                                                           Rectangle()
                                                        .fill(LinearGradient(gradient: Gradient(colors: [.clear]),
                                                              startPoint: .center, endPoint: .bottom)))
-                                .cornerRadius(12.0).shadow(radius: 0.5,x: 2, y: 2)
-                                Text("Mea Sue Pavilion").font(.footnote).fontWeight(.regular).padding(3).background(Color(.darkred)).cornerRadius(10.0)
+                               .shadow(radius: 0.5,x: 2, y: 2)
+                                Text("Mae Sue Pavilion").font(.footnote).fontWeight(.regular).padding(3).background(Color(.darkred)).cornerRadius(10.0)
                             }
                             
                             VStack{
-                            Image("Stamp1").resizable().frame(width: 110,height: 160)
+                            Image("m1").resizable().frame(width: 110,height: 160)
                                                        .overlay(
                                                           Rectangle()
                                                        .fill(LinearGradient(gradient: Gradient(colors: [.clear]),
                                                              startPoint: .center, endPoint: .bottom)))
-                                                       .cornerRadius(12.0).shadow(radius: 0.5,x: 2, y: 2)
+                                                       .shadow(radius: 0.5,x: 2, y: 2)
                                 Text("Nuad Pavilion").font(.footnote).fontWeight(.regular).padding(3).background(Color(.darkred)).cornerRadius(10.0)
                             }.opacity(0.5)
                             
-                            VStack{
-                            Image("Stamp2").resizable().frame(width: 110,height: 160)
-                                                       .overlay(
-                                                          Rectangle()
-                                                       .fill(LinearGradient(gradient: Gradient(colors: [.clear]),
-                                                             startPoint: .center, endPoint: .bottom)))
-                                                       .cornerRadius(12.0).shadow(radius: 0.5,x: 2, y: 2)
-                                Text("Misakawan Park").font(.footnote).fontWeight(.regular).padding(3).background(Color(.darkred)).cornerRadius(10.0)
-                            }.opacity(0.5)
-
-                            VStack{
-                            Image("Stamp3").resizable().frame(width: 110,height: 160)
-                                                       .overlay(
-                                                          Rectangle()
-                                                       .fill(LinearGradient(gradient: Gradient(colors: [.clear]),
-                                                             startPoint: .center, endPoint: .bottom)))
-                                                       .cornerRadius(12.0).shadow(radius: 0.5,x: 2, y: 2)
-                                Text("The Main Chapel").font(.footnote).fontWeight(.regular).padding(3).background(Color(.darkred)).cornerRadius(10.0)
-                            }.opacity(0.5)
+//                            VStack{
+//                            Image("Stamp2").resizable().frame(width: 110,height: 160)
+//                                                       .overlay(
+//                                                          Rectangle()
+//                                                       .fill(LinearGradient(gradient: Gradient(colors: [.clear]),
+//                                                             startPoint: .center, endPoint: .bottom)))
+//                                                       .cornerRadius(12.0).shadow(radius: 0.5,x: 2, y: 2)
+//                                Text("Misakawan Park").font(.footnote).fontWeight(.regular).padding(3).background(Color(.darkred)).cornerRadius(10.0)
+//                            }.opacity(0.5)
+//
+//                            VStack{
+//                            Image("Stamp3").resizable().frame(width: 110,height: 160)
+//                                                       .overlay(
+//                                                          Rectangle()
+//                                                       .fill(LinearGradient(gradient: Gradient(colors: [.clear]),
+//                                                             startPoint: .center, endPoint: .bottom)))
+//                                                       .cornerRadius(12.0).shadow(radius: 0.5,x: 2, y: 2)
+//                                Text("The Main Chapel").font(.footnote).fontWeight(.regular).padding(3).background(Color(.darkred)).cornerRadius(10.0)
+//                            }.opacity(0.5)
 
 
 
@@ -146,6 +147,7 @@ struct SelectLocation: View {
           
                                 Button(action:{
                                                  self.isStamps = true
+                                                 self.isStampFromSelect = true
                                                  
                                              }) {
                                                  VStack{
