@@ -17,6 +17,15 @@ class StampObject: Object {
     
     let scenes = List<Scene>()
     
+    convenience init(name:String, isDoneStamp:Bool, isChoosed:Bool,info: String ){
+        
+        self.init()
+        self.name = name
+        self.isDoneStamp = isDoneStamp
+        self.isChoosed = isChoosed
+        self.info = info
+    }
+    
   
 }
 
@@ -27,4 +36,7 @@ class Scene: Object {
     
 }
 
-    
+let Maesue = StampObject()
+    Maesue.name = "Measue"
+//    Maesue.isDoneStamp = false
+//    Maesue.info = ""

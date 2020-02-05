@@ -13,9 +13,12 @@ struct ARViewMenu: View {
     @State var showmenu = true
     @State private var isAchieve = false
     @State private var isMap = false
-    @State private var isStamps = false
+    @State public var isStamps = false
+    @State public var isBackFromAR = false
+    
     
     @EnvironmentObject var data: Datamodel
+ 
     
     var body:  some View {
      
@@ -29,9 +32,8 @@ struct ARViewMenu: View {
                         }.frame(width: CGFloat(80))
                         .padding(.all,6)
                         .cornerRadius(15)
-
                  
-                    Button(action : { withAnimation{ self.showmenu.toggle()  }
+                   Button(action : { withAnimation{ self.showmenu.toggle()  }
         
                     } ) {
                         Image(systemName: "text.justify")
@@ -61,6 +63,7 @@ struct ARViewMenu: View {
                
                 Button(action:{
                     self.isMap = true
+                    self.isBackFromAR = true
                     print("map")
     
                 }) {
@@ -82,7 +85,8 @@ struct ARViewMenu: View {
                 }.padding(.all,8.0)
                     
                 Button(action:{
-                    self.isStamps = true
+                    self.isStamps.toggle()
+
                     print("stamp")
                 }) {
                     VStack{
@@ -110,9 +114,12 @@ struct ARViewMenu: View {
                 }
                     
                 else if isStamps == true{
+                        
+                    
                     Stamps()
+                    
                 }
-    
+              
      
             }.frame(maxWidth: .infinity, maxHeight: .infinity)
         
